@@ -1,0 +1,38 @@
+// Criar um programa que execute a multiplicação da matriz M com o vetor V
+
+#include <stdio.h>
+
+int main(void) {
+
+  int M[3][3];
+  int V[3];
+  int R[3];
+  int i, j, aux;
+
+  // ler matriz
+  for (i = 0; i < 3; i++) {
+    for (j = 0; j < 3; j++) {
+      printf("Digite os elementos da matriz: ");
+      scanf("%d", &M[i][j]);
+    }
+    printf("\n");
+  }
+  // ler vetor
+  for (j = 0; j < 3; j++) {
+    printf("Digite os elementos do vetor: ");
+    scanf("%d", &V[j]);
+  }
+  // fazer multiplicação
+  for (i = 0; i < 3; i++) {
+    aux = 0;
+    for (j = 0; j < 3; j++) {
+      aux = aux + M[i][j] * V[j];
+      R[i] = aux;
+    }
+  }
+  // mostrar resultado
+  for (j = 0; j < 3; j++) {
+    printf("M = [%d] ", R[j]);
+    printf("\n");
+  }
+}
